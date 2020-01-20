@@ -1,0 +1,25 @@
+{
+  "name": "burger-node",
+  "version": "1.0.0",
+  "description": "Burger logger to get burger order",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cshjnim/burger-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cshjnim/burger-node/issues"
+  },
+  "homepage": "https://github.com/cshjnim/burger-node#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  }
+}
