@@ -1,4 +1,4 @@
-<img src="/public/assets/img/cheeseburger-hamburger.jpg" style="align-content: center;">
+
 <h1>Eat-Da-Burger!</h1>
 
 <main>
@@ -11,7 +11,6 @@
                     <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
                         <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
                     </form>
-                    <h3>Enter a burger you want to eat. Click the "Submit" button.</h3>
                 </div>
                 {{/unless}}
                 {{/each}}
@@ -32,13 +31,13 @@
     </div>
 </main>
 
-<h2>Add A Burger Option</h2>
+<h2>Add A Burger</h2>
 
 <div class="row">
     <div class="col s12">
         <form action="/burgers" method="POST">
-            <input type="text" id="name" name="burger_name" placeholder="Burger, burger, burger...">
-            <button type="submit" class="addBurgerButton">Add The Burger</button>
+            <input type="text" id="name" name="burger_name" placeholder="Burger, burger, burger...Enter a burger you want to eat. Click the Submit button.">
+            <button type="submit" class="addBurgerButton">Submit</button>
         </form>
     </div>
 </div>
