@@ -1,43 +1,62 @@
-
-<h1>Eat-Da-Burger!</h1>
-
+<h1>Eat-Da-Burgers!!!</h1>
 <main>
+
     <div class="container">
         <div class="row">
-            <div class="col s6">
-                {{#each burgers}}
-                {{#unless this.devoured}}
-                <div>
-                    <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                        <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-                    </form>
+
+            <div class="col-md-4 col-md-offset-1">
+                <div class="panel-panel default">
+                    <h2>Ready to Eat Burger</h2>
+                    <ul class="list-group">
+                        {{#each burgers}}
+                        {{#unless this.devoured}}
+                        <li class="list-group-item">
+                            <div class="input-group">
+                                <p class="burgerAvailable">{{this.burger_name}}</p>
+                                <span class="input-group-btn">
+
+                                    <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+                                        <input type="hidden" name="devoured" value="true">
+                                        <button class="btn btn-default btn-lg" type="submit">Devour it!</button>
+                                    </form>
+                                </span>
+                            </div>
+                        </li>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+
                 </div>
-                {{/unless}}
-                {{/each}}
             </div>
 
-            <div class="col s6">
-                {{#each burgers}}
-                {{#if this.devoured}}
-                <div class='finished'>
-                    <div>
-                        {{this.burger_name}}
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                    <h2>Devoured Burgers</h2>
+                    <div class="panel panel-default">
+                        <ul class="list-group">
+                            {{#each burgers}}
+                            {{#if this.devoured}}
+                            <li class="list-group-item">
+                                <p class="finished">{{this.burger_name}}</p>
+                            </li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
                     </div>
                 </div>
-                {{/if}}
-                {{/each}}
             </div>
         </div>
     </div>
 </main>
 
-<h2>Add A Burger</h2>
+<div class="col-md-10 col-md-offset-1">
+    <h2>Add burger & Click submit</h2>
 
-<div class="row">
-    <div class="col s12">
-        <form action="/burgers" method="POST">
-            <input type="text" id="name" name="burger_name" placeholder="Burger, burger, burger...Enter a burger you want to eat. Click the Submit button.">
-            <button type="submit" class="addBurgerButton">Submit</button>
-        </form>
-    </div>
+    <form class="create-update-form" action="burgers/create" method="POST">
+        <div class="form-group">
+            <textarea class="form-control input-lg" type="text" id="name" name="burger_name" row="3"></textarea>
+        </div>
+        <button type="submit" class="addBurgerButton">Submit</button>
+    </form>
 </div>
