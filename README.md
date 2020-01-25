@@ -187,7 +187,7 @@ All the recommended files and directories from the steps above should look like 
 - - -
 
 ### Links & Portfolio's Links
-*  [Deployed page](https://github.com/cshjnim/burger-node.git)
+*  [Deployed page](https://eat-da-burger-cshj.herokuapp.com/)
 *  [Hyejin's Portfolio](https://cshjnim.github.io/)
 
 - - -
